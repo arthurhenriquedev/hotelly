@@ -5,23 +5,18 @@ import { useFilterStore } from '@/stores/filters'
 
 import type { Filter } from '@/types/Filters.types'
 import type { Hotel } from '@/types/Hotels.types'
+import type { Location } from '@/types/Location.types'
 
 import AvailableHotels from '@/statics/mock/available_hotels.json'
 
 export const useHotelsStore = defineStore('hotels', () => {
-  const hotels = ref<Hotel[]>([])
+  const hotels = ref<Hotel[]>(AvailableHotels as Hotel[])
 
   const filters = useFilterStore()
 
-  hotels.value = AvailableHotels
-
-  const getHotelsCount = computed(() => {
-    return fetchFilteredHotels()?.length || 0
-  })
-
-  const fetchFilteredHotels = () => {
-    const filter = filters.filters
-    const hasFilter = Object.keys(filter).some(
+  const getFilteredHotels = computed(() => {
+    const filter = filters.filters as Filter
+    const hasFilter = (Object.keys(filter) as (keyof Filter)[]).some(
       (key) => filter[key] !== undefined && filter[key] !== null && filter[key] !== ''
     )
 
@@ -34,7 +29,7 @@ export const useHotelsStore = defineStore('hotels', () => {
         return false
       }
 
-      if (filter.category && filter.category?.slug !== hotel.category?.slug) {
+      if (filter.category && filter.category.slug !== hotel.category?.slug) {
         return false
       }
 
@@ -42,7 +37,7 @@ export const useHotelsStore = defineStore('hotels', () => {
         return false
       }
 
-      if (filter.price && (hotel.price < filter.price.min || hotel.price > filter.price.max)) {
+      if (filter.price && (hotel.price < filter.price?.min || hotel.price > filter.price?.max)) {
         return false
       }
 
@@ -50,13 +45,35 @@ export const useHotelsStore = defineStore('hotels', () => {
         return false
       }
 
-      if (filter.numberGuests && filter.numberGuests !== hotel.guests) {
+      if (filter.numberGuests && filter.numberGuests > hotel.guests) {
         return false
       }
 
       return true
     })
-  }
+  })
 
-  return { hotels, getHotelsCount, fetchFilteredHotels }
+  const getHotelsCount = computed(() => {
+    return getFilteredHotels.value.length
+  })
+
+  const getAvailableLocations = computed(() => {
+    if (!hotels.value) return []
+
+    const filteredHotels = hotels.value.filter(
+      (hotel) =>
+        filters.filters.category?.slug === hotel.category?.slug || !filters.filters.category
+    )
+    return [...new Set(filteredHotels.map((hotel) => hotel.location))] as Location[]
+  })
+
+  const getAvailablePrices = computed(() => {
+    const prices = getFilteredHotels.value.map((hotel) => hotel.price)
+    return {
+      min: Math.min(...prices),
+      max: Math.max(...prices)
+    }
+  })
+
+  return { hotels, getHotelsCount, getAvailableLocations, getAvailablePrices, getFilteredHotels }
 })

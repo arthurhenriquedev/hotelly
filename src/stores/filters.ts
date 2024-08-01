@@ -3,37 +3,41 @@ import { ref } from 'vue'
 import type { Filter } from '@/types/Filter'
 
 export const useFilterStore = defineStore('filterStore', () => {
-  // Initial state
   const filters = ref<Filter>({
     name: undefined,
     price: undefined,
-    numberGuests: undefined,
+    numberGuests: 1,
     numberBedrooms: undefined,
     category: undefined,
-    location: undefined
+    location: undefined,
+    date: undefined
   })
 
-  // Action to set filters
   function setFilters(newFilters: Filter) {
     filters.value = { ...filters.value, ...newFilters }
   }
 
   function setFilter(key: keyof Filter, value: any) {
-    filters.value = {
-      ...filters.value,
-      [key]: value
+    if (value === undefined || value === null) {
+      const { [key]: _, ...rest } = filters.value
+      filters.value = rest as Filter
+    } else {
+      filters.value = {
+        ...filters.value,
+        [key]: value
+      }
     }
   }
 
-  // Action to reset filters
   function resetFilters() {
     filters.value = {
       name: undefined,
       price: undefined,
-      numberGuests: undefined,
+      numberGuests: 1,
       numberBedrooms: undefined,
       category: undefined,
-      location: undefined
+      location: undefined,
+      date: undefined
     }
   }
 

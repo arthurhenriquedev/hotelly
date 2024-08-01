@@ -4,6 +4,21 @@
     "about": "Sobre",
     "experiences": "Experiências",
     "all_categories": "Todas as categorias",
+    "detailed_filter_heading": "Encontre a experiência perfeita",
+    "filters": {
+      "location": "Localização",
+      "date": {
+        "start": "Data de check-in",
+        "end": "Data de check-out"
+      },
+      "number_of_guests": "Número de hóspedes",
+      "price": {
+        "title": "Preço",
+        "min": "Preço mínimo",
+        "max": "Preço máximo"
+      },
+      "apply_filters": "Aplicar filtros"
+    },
     "hotel_card": {
       "guests": "{count} hóspedes",
       "bedrooms": "{count} quartos"

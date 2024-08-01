@@ -4,18 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
-const hotel = ref(null)
-
-const getHotel = () => {
-  console.log('getHotel')
-}
-
-onMounted(() => {
-  getHotel()
-})
-</script>
+<script setup lang="ts"></script>
 
 <style></style>

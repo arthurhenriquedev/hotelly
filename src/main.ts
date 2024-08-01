@@ -9,6 +9,7 @@ import Lang from '@/statics/lang/lang.js'
 import vue3StarRatings from 'vue3-star-ratings'
 import vLazy from './directives/v-lazy'
 import CircleFlags from 'vue-circle-flags'
+import VueSlider from 'vue-3-slider-component'
 
 import 'vue-circle-flags/dist/vue-circle-flags.css'
 import './plugins/fontawesome'
@@ -28,6 +29,7 @@ app.use(CircleFlags)
 
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('vue3-star-ratings', vue3StarRatings)
+app.component('VueSlider', VueSlider)
 
 app.directive('lazy', vLazy)
 
