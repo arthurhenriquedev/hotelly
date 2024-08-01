@@ -1,0 +1,39 @@
+{
+  "pt": {
+    "home": "Início",
+    "about": "Sobre",
+    "experiences": "Experiências",
+    "all_categories": "Todas as categorias",
+    "hotel_card": {
+      "guests": "{count} hóspedes",
+      "bedrooms": "{count} quartos"
+    },
+    "list": {
+      "no_experiences": "Nenhuma experiência encontrada",
+      "no_experiences_description": "Não conseguimos encontrar nenhuma experiência com os filtros selecionados. Tente novamente com filtros diferentes.",
+      "relevant_experiences": "Experiências mais relevantes para você",
+      "experiences_count": "{count} experiências disponíveis em {location}",
+      "list_final": "Isto é tudo"
+    },
+    "search": {
+      "placeholder": "Pesquise {count} experiências em todo o mundo...",
+      "noResults": "Nenhum resultado encontrado"
+    },
+    "user": {
+      "login": "Entrar",
+      "logout": "Sair",
+      "register": "Registrar",
+      "profile": "Perfil"
+    },
+    "categories": {
+      "hotel": "Hotel",
+      "experience": "Experiência",
+      "apartment": "Apartamento",
+      "house": "Casa",
+      "chalet": "Chalé"
+    },
+    "location": {
+      "all_locations": "Todas as localizações"
+    }
+  }
+}

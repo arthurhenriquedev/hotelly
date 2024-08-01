@@ -1,0 +1,39 @@
+{
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "experiences": "Experiences",
+    "all_categories": "All categories",
+    "hotel_card": {
+      "guests": "{count} guests",
+      "bedrooms": "{count} bedrooms"
+    },
+    "list": {
+      "no_experiences": "No experiences found",
+      "no_experiences_description": "There are no experiences available for this category",
+      "relevant_experiences": "Relevant experiences for you",
+      "experiences_count": "{count} experiences available",
+      "list_final": "This is all"
+    },
+    "search": {
+      "placeholder": "Search {count} experiences around the world...",
+      "noResults": "No results found"
+    },
+    "user": {
+      "login": "Login",
+      "logout": "Logout",
+      "register": "Register",
+      "profile": "Profile"
+    },
+    "categories": {
+      "hotel": "Hotel",
+      "experience": "Experience",
+      "apartment": "Apartment",
+      "house": "House",
+      "chalet": "Chalet"
+    },
+    "location": {
+      "all_locations": "All locations"
+    }
+  }
+}

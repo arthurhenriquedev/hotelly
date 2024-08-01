@@ -1,0 +1,7 @@
+[
+  { "id": 1, "slug": "hotel", "icon": "hotel" },
+  { "id": 2, "slug": "experience", "icon": "wand-sparkles" },
+  { "id": 3, "slug": "apartment", "icon": "building" },
+  { "id": 4, "slug": "house", "icon": "house-chimney-window" },
+  { "id": 5, "slug": "chalet", "icon": "tree" }
+]

@@ -1,0 +1,382 @@
+[
+  {
+    "id": "a423d7612ff12980cb546159ed82b510f99ea567168d46a49cb4809b4cfed2a8",
+    "image": "https://placehold.co/600x400",
+    "name": "Hotel Lisboa",
+    "description": "Descrição do Hotel em Lisboa.",
+    "price": 215.12,
+    "score": 1.6,
+    "location": {
+      "city": "Lisboa",
+      "country": "Portugal"
+    },
+    "category": {
+      "id": 1,
+      "slug": "hotel",
+      "icon": "hotel"
+    },
+    "bedrooms": 20,
+    "guests": 50
+  },
+  {
+    "id": "2c5e6f6bbb6e7f3ed949c37d483c0fdbeae6d8344162ea157d0794eee9478c72",
+    "image": "https://placehold.co/600x400",
+    "name": "Experiência Sydney",
+    "description": "Descrição da Experiência em Sydney.",
+    "price": 193.29,
+    "score": 4.3,
+    "location": {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    "category": {
+      "id": 2,
+      "slug": "experience",
+      "icon": "wand-sparkles"
+    },
+    "bedrooms": 0,
+    "guests": 1
+  },
+  {
+    "id": "9b69db17c7db4428b806169c8b2f792669b807d4f5c8df4e18919c3abaff8404",
+    "image": "https://placehold.co/600x400",
+    "name": "Apartamento Tóquio",
+    "description": "Descrição do Apartamento em Tóquio.",
+    "price": 293.33,
+    "score": 4.5,
+    "location": {
+      "city": "Tóquio",
+      "country": "Japão"
+    },
+    "category": {
+      "id": 3,
+      "slug": "apartment",
+      "icon": "building"
+    },
+    "bedrooms": 2,
+    "guests": 4
+  },
+  {
+    "id": "a531a12a18dd11560eb4f6dec1a75683aea80a9e7adb95ce796b5d1797587b14",
+    "image": "https://placehold.co/600x400",
+    "name": "Casa Cairo",
+    "description": "Descrição da Casa em Cairo.",
+    "price": 134,
+    "score": 1,
+    "location": {
+      "city": "Cairo",
+      "country": "Egito"
+    },
+    "category": {
+      "id": 4,
+      "slug": "house",
+      "icon": "house-chimney-window"
+    },
+    "bedrooms": 3,
+    "guests": 6
+  },
+  {
+    "id": "6bdb1cd1b03e3f07d901098c686cf69faef5a2a713587b629d8e7d8352b1ab9d",
+    "image": "https://placehold.co/600x400",
+    "name": "Chalé Atenas",
+    "description": "Descrição do Chalé em Atenas.",
+    "price": 82.99,
+    "score": 3,
+    "location": {
+      "city": "Atenas",
+      "country": "Grécia"
+    },
+    "category": {
+      "id": 5,
+      "slug": "chalet",
+      "icon": "tree"
+    },
+    "bedrooms": 2,
+    "guests": 5
+  },
+  {
+    "id": "748dea466030e721002b3b9da6c549d68498a91a94c372c2bb89b897b5937cc7",
+    "image": "https://placehold.co/600x400",
+    "name": "Hotel Paris",
+    "description": "Descrição do Hotel em Paris.",
+    "price": 110,
+    "score": 1,
+    "location": {
+      "city": "Paris",
+      "country": "França"
+    },
+    "category": {
+      "id": 1,
+      "slug": "hotel",
+      "icon": "hotel"
+    },
+    "bedrooms": 50,
+    "guests": 100
+  },
+  {
+    "id": "c22c83b77748c040bd15a7ef54c6b57593abd4af18fe99e8bee9037ce1d4d674",
+    "image": "https://placehold.co/600x400",
+    "name": "Experiência Berlim",
+    "description": "Descrição da Experiência em Berlim.",
+    "price": 149,
+    "score": 5,
+    "location": {
+      "city": "Berlim",
+      "country": "Alemanha"
+    },
+    "category": {
+      "id": 2,
+      "slug": "experience",
+      "icon": "wand-sparkles"
+    },
+    "bedrooms": 0,
+    "guests": 1
+  },
+  {
+    "id": "25aafc820241cbb9fb4296856a91ca135bea5b29c3913f77b3f34817d6c106e5",
+    "image": "https://placehold.co/600x400",
+    "name": "Apartamento Roma",
+    "description": "Descrição do Apartamento em Roma.",
+    "price": 85.27,
+    "score": 4,
+    "location": {
+      "city": "Roma",
+      "country": "Itália"
+    },
+    "category": {
+      "id": 3,
+      "slug": "apartment",
+      "icon": "building"
+    },
+    "bedrooms": 1,
+    "guests": 2
+  },
+  {
+    "id": "7e1eba2b180999790a035a55a6b078436b1f6bee3a6a60a4e5b447ffb4058b77",
+    "image": "https://placehold.co/600x400",
+    "name": "Casa Nova York",
+    "description": "Descrição da Casa em Nova York.",
+    "price": 268,
+    "score": 1,
+    "location": {
+      "city": "Nova York",
+      "country": "Estados Unidos"
+    },
+    "category": {
+      "id": 4,
+      "slug": "house",
+      "icon": "house-chimney-window"
+    },
+    "bedrooms": 4,
+    "guests": 8
+  },
+  {
+    "id": "7f1afff83f14ec987dce5bbb0134c3cfede463c0a17815c29b0c1bf5857e0dda",
+    "image": "https://placehold.co/600x400",
+    "name": "Chalé Cidade do Cabo",
+    "description": "Descrição do Chalé em Cidade do Cabo.",
+    "price": 112,
+    "score": 2,
+    "location": {
+      "city": "Cidade do Cabo",
+      "country": "África do Sul"
+    },
+    "category": {
+      "id": 5,
+      "slug": "chalet",
+      "icon": "tree"
+    },
+    "bedrooms": 3,
+    "guests": 6
+  },
+  {
+    "id": "98a93d1c95b6c2d5e9fe41c2258bbb1309695a579a7ba756bab84863dfbc853d",
+    "image": "https://placehold.co/600x400",
+    "name": "Hotel Toronto",
+    "description": "Descrição do Hotel em Toronto.",
+    "price": 76,
+    "score": 4,
+    "location": {
+      "city": "Toronto",
+      "country": "Canadá"
+    },
+    "category": {
+      "id": 1,
+      "slug": "hotel",
+      "icon": "hotel"
+    },
+    "bedrooms": 30,
+    "guests": 60
+  },
+  {
+    "id": "a42f7fb8679c41f27a516b43622beeffe36e7a76c8fa13d89d35644034791ad2",
+    "image": "https://placehold.co/600x400",
+    "name": "Experiência Buenos Aires",
+    "description": "Descrição da Experiência em Buenos Aires.",
+    "price": 151,
+    "score": 1,
+    "location": {
+      "city": "Buenos Aires",
+      "country": "Argentina"
+    },
+    "category": {
+      "id": 2,
+      "slug": "experience",
+      "icon": "wand-sparkles"
+    },
+    "bedrooms": 0,
+    "guests": 1
+  },
+  {
+    "id": "2ee3c931aadedd33eb2a773f878712c1560319ce1de840e8573d733ffdb038cc",
+    "image": "https://placehold.co/600x400",
+    "name": "Apartamento Rio de Janeiro",
+    "description": "Descrição do Apartamento no Rio de Janeiro.",
+    "price": 181,
+    "score": 5,
+    "location": {
+      "city": "Rio de Janeiro",
+      "country": "Brasil"
+    },
+    "category": {
+      "id": 3,
+      "slug": "apartment",
+      "icon": "building"
+    },
+    "bedrooms": 2,
+    "guests": 4
+  },
+  {
+    "id": "b73ba7a447883f796355c168a8a8728df5cd63961320e07286b880d3dc459696",
+    "image": "https://placehold.co/600x400",
+    "name": "Casa Londres",
+    "description": "Descrição da Casa em Londres.",
+    "price": 97,
+    "score": 4,
+    "location": {
+      "city": "Londres",
+      "country": "Reino Unido"
+    },
+    "category": {
+      "id": 4,
+      "slug": "house",
+      "icon": "house-chimney-window"
+    },
+    "bedrooms": 3,
+    "guests": 6
+  },
+  {
+    "id": "6b8867f4e3e7347bd9eadd91a3cafddb3f6a6cb034da74c7aa4d7032296f8087",
+    "image": "https://placehold.co/600x400",
+    "name": "Chalé Dubai",
+    "description": "Descrição do Chalé em Dubai.",
+    "price": 256,
+    "score": 5,
+    "location": {
+      "city": "Dubai",
+      "country": "Emirados Árabes Unidos"
+    },
+    "category": {
+      "id": 5,
+      "slug": "chalet",
+      "icon": "tree"
+    },
+    "bedrooms": 4,
+    "guests": 8
+  },
+  {
+    "id": "da7b9dda00f59ba8613c6c7b38ec995fbc0ee9077035179296ff3bf4a4018d25",
+    "image": "https://placehold.co/600x400",
+    "name": "Hotel Moscou",
+    "description": "Descrição do Hotel em Moscou.",
+    "price": 197,
+    "score": 3,
+    "location": {
+      "city": "Moscou",
+      "country": "Rússia"
+    },
+    "category": {
+      "id": 1,
+      "slug": "hotel",
+      "icon": "hotel"
+    },
+    "bedrooms": 40,
+    "guests": 80
+  },
+  {
+    "id": "62913bd59cda0444a59abbb2b30854fba9236648eef8d2f1ec35bd689fcc422c",
+    "image": "https://placehold.co/600x400",
+    "name": "Experiência Pequim",
+    "description": "Descrição da Experiência em Pequim.",
+    "price": 177,
+    "score": 2,
+    "location": {
+      "city": "Pequim",
+      "country": "China"
+    },
+    "category": {
+      "id": 2,
+      "slug": "experience",
+      "icon": "wand-sparkles"
+    },
+    "bedrooms": 0,
+    "guests": 1
+  },
+  {
+    "id": "3fe5c3c996837e7a470b7cc855b4aa44e4484da68239779d73fa44dba97ea7f8",
+    "image": "https://placehold.co/600x400",
+    "name": "Apartamento São Paulo",
+    "description": "Descrição do Apartamento em São Paulo.",
+    "price": 202,
+    "score": 5,
+    "location": {
+      "city": "São Paulo",
+      "country": "Brasil"
+    },
+    "category": {
+      "id": 3,
+      "slug": "apartment",
+      "icon": "building"
+    },
+    "bedrooms": 3,
+    "guests": 6
+  },
+  {
+    "id": "aeae8c5e91545d9aea4e96d760f1438398cd61ff4622eb0bfd764db04fba77aa",
+    "image": "https://placehold.co/600x400",
+    "name": "Casa Madri",
+    "description": "Descrição da Casa em Madri.",
+    "price": 134,
+    "score": 3,
+    "location": {
+      "city": "Madri",
+      "country": "Espanha"
+    },
+    "category": {
+      "id": 4,
+      "slug": "house",
+      "icon": "house-chimney-window"
+    },
+    "bedrooms": 3,
+    "guests": 6
+  },
+  {
+    "id": "951b96d3a7a55f9031862832d5869a4fb6c29f44bbf03e567412905d2079fa06",
+    "image": "https://placehold.co/600x400",
+    "name": "Chalé Mumbai",
+    "description": "Descrição do Chalé em Mumbai.",
+    "price": 263,
+    "score": 3,
+    "location": {
+      "city": "Mumbai",
+      "country": "Índia"
+    },
+    "category": {
+      "id": 5,
+      "slug": "chalet",
+      "icon": "tree"
+    },
+    "bedrooms": 4,
+    "guests": 8
+  }
+]
