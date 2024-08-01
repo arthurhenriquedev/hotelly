@@ -41,23 +41,37 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+
 import { useCategoryStore } from '@/stores/categories'
+import { useFilterStore } from '@/stores/filters'
 
 import type { Category } from '@/types/Categories.types'
-import type { Filter } from '@/types/Filters.types'
 
+const filters = useFilterStore()
 const categoryStore = useCategoryStore()
+
 const suggestedCategories = ref<Category[]>([])
 const selectedCategory = ref<Category | null>(null)
-const filters = ref<Filter>({})
 
 const handleCategorySelect = (category: Category) => {
   selectedCategory.value = category
+  filters.setFilter('category', category)
 }
 
 onMounted(() => {
   suggestedCategories.value = categoryStore.fetchSuggested
-  console.log(suggestedCategories)
+  if (filters.filters.category) {
+    selectedCategory.value = filters.filters.category
+  }
 })
+
+watch(
+  () => filters.filters,
+  () => {
+    if (filters.filters.category) {
+      selectedCategory.value = filters.filters.category
+    }
+  }
+)
 </script>

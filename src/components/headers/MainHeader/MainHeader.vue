@@ -48,6 +48,7 @@
               class="block w-96 px-4 py-3 ps-10 text-sm text-gray-900 outline-none border rounded-lg bg-light"
               :placeholder="$t('search.placeholder', { count: hotelCount })"
               required
+              @input="handleSearch"
             />
           </div>
         </form>
@@ -98,14 +99,34 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+
 import { useHotelsStore } from '@/stores/hotels'
 import { useMonetaryUnitStore } from '@/stores/monetary'
+import { useFilterStore } from '@/stores/filters'
 
 const hotels = useHotelsStore()
 const monetaryStore = useMonetaryUnitStore()
+const filterStore = useFilterStore()
 
 const searchQuery = ref('')
 const monetaryUnit = ref(monetaryStore.currentUnit)
 const hotelCount = hotels.getHotelsCount
+
+const handleSearch = () => {
+  filterStore.setFilter('name', searchQuery)
+}
+
+onMounted(() => {
+  if (filterStore.filters.name) {
+    searchQuery.value = filterStore.filters.name
+  }
+})
+
+watch(
+  () => filterStore.filters,
+  () => {
+    searchQuery.value = filterStore.filters.name
+  }
+)
 </script>
