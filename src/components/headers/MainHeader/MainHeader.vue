@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="search flex flex-row items-center">
+      <div class="search max-lg:hidden max-xl:flex flex-row items-center">
         <form>
           <div class="relative flex items-center justify-center">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -56,8 +56,8 @@
     </div>
 
     <div class="flex flex-row">
-      <div class="mr-10 flex flex-row items-center divide-x divide-gray-200">
-        <nav class="flex flex-row gap-8 pr-6 text-sm">
+      <div class="max-md:mr-4 md:mr-10 flex flex-row items-center md:divide-x divide-gray-200">
+        <nav class="max-md:hidden flex flex-row gap-8 pr-6 text-sm">
           <router-link to="/" class="text-dark">
             {{ $t('home') }}
           </router-link>
@@ -69,7 +69,7 @@
           </router-link>
         </nav>
 
-        <div class="monetary-unit pl-6 flex flex-row items-center">
+        <div class="monetary-unit md:pl-6 flex flex-row items-center">
           <CircleFlags :country="monetaryUnit.country" class="unit-flag" />
           <select
             v-model="monetaryUnit"

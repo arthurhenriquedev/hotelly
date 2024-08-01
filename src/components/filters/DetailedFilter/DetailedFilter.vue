@@ -4,7 +4,10 @@
       {{ $t('detailed_filter_heading') }}
     </p>
 
-    <div class="grid grid-cols-6 items-center gap-2" id="filters">
+    <div
+      class="grid max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center gap-2"
+      id="filters"
+    >
       <div class="flex flex-col">
         <label for="location" class="text-sm text-gray-500 mb-1">{{
           $t('filters.location')
@@ -58,7 +61,7 @@
         />
       </div>
 
-      <div class="flex flex-col w-full">
+      <!-- <div class="flex flex-col w-full">
         <label for="price-range" class="text-sm text-gray-500 mb-1">{{
           $t('filters.price.title')
         }}</label>
@@ -70,17 +73,17 @@
             :interval="0.1"
             :lazy="true"
             class="mt-2"
-            @change="formFilters.price = { min: priceRange[0], max: priceRange[1] }"
           ></vue-slider>
           {{ priceRange }}
+          {{ prices[0] }}
         </div>
         <div class="flex justify-between w-full text-sm text-dark">
           <span>{{ getFormattedPrice(prices[0]) }}</span>
           <span>{{ getFormattedPrice(prices[1]) }}</span>
         </div>
-      </div>
+      </div> -->
 
-      <div class="flex flex-col">
+      <div class="flex flex-col h-full justify-end">
         <button
           class="btn__gradient w-full h-12 outline-none border border-gray-300 text-white rounded-lg"
           @click="applyFilters"
@@ -112,10 +115,6 @@ const formFilters = ref<Filter>({
     start: undefined,
     end: undefined
   },
-  price: {
-    min: undefined,
-    max: undefined
-  },
   numberGuests: 1
 })
 
@@ -130,16 +129,17 @@ onMounted(() => {
       setFilters(JSON.parse(JSON.stringify(filterStore.filters)))
       console.log('formFilters', formFilters.value)
       setLocations(hotelStore.getAvailableLocations)
+      setPrices(hotelStore.getAvailablePrices)
     },
     { immediate: true }
   )
 
-  watch(
-    () => priceRange.value,
-    () => {
-      formFilters.value.price = { min: priceRange.value[0], max: priceRange.value[1] }
-    }
-  )
+  // watch(
+  //   () => priceRange.value,
+  //   () => {
+  //     formFilters.value.price = { min: priceRange.value[0], max: priceRange.value[1] }
+  //   }
+  // )
 
   setPrices(hotelStore.getAvailablePrices)
 
@@ -178,21 +178,25 @@ const setFilters = (filters: Filter) => {
     formFilters.value.numberGuests = filters.numberGuests
   }
 
-  if (filters.price?.min && filters.price?.max) {
-    if (filters.price.min >= prices.value[0]) {
-      priceRange.value[0] = filters.price.min
-    }
+  // if (filters.price?.min && filters.price?.max) {
+  //   if (filters.price.min >= prices.value[0]) {
+  //     priceRange.value[0] = filters.price.min
+  //   }
 
-    if (filters.price.max <= prices.value[1]) {
-      priceRange.value[1] = filters.price.max
-    }
-  }
+  //   if (filters.price.max <= prices.value[1]) {
+  //     priceRange.value[1] = filters.price.max
+  //   }
+  // }
 
-  console.log('setFilters', formFilters.value)
+  console.log('setFilters', filters.price)
 }
 
 const setPrices = (newPrices: { min: number; max: number }) => {
-  if (!newPrices?.min || !newPrices?.max) return
+  if (!newPrices?.min || !newPrices?.max) {
+    prices.value = [0, 1000]
+    priceRange.value = [0, 1000]
+    return
+  }
 
   const newPricesCopy = JSON.parse(JSON.stringify(newPrices))
   prices.value = [newPricesCopy.min, newPricesCopy.max]

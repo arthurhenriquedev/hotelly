@@ -1,6 +1,8 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
+import { getTotalNights } from '@/utils'
+
 import { useFilterStore } from '@/stores/filters'
 
 import type { Filter } from '@/types/Filters.types'
@@ -24,33 +26,41 @@ export const useHotelsStore = defineStore('hotels', () => {
       return hotels.value
     }
 
-    return hotels.value.filter((hotel) => {
-      if (filter.name && !hotel.name.toLowerCase().includes(filter.name.toLowerCase())) {
-        return false
-      }
+    return hotels.value
+      .map((hotel) => {
+        const formattedHotel = { ...hotel }
+        const nights = getTotalNights(filter.date?.start ?? '', filter.date?.end ?? '')
+        formattedHotel.price = hotel.price * (filter.numberGuests ?? 1) * nights
+        formattedHotel.nights = nights
+        return formattedHotel
+      })
+      .filter((hotel) => {
+        if (filter.name && !hotel.name.toLowerCase().includes(filter.name.toLowerCase())) {
+          return false
+        }
 
-      if (filter.category && filter.category.slug !== hotel.category?.slug) {
-        return false
-      }
+        if (filter.category && filter.category.slug !== hotel.category?.slug) {
+          return false
+        }
 
-      if (filter.location && filter.location.city !== hotel.location.city) {
-        return false
-      }
+        if (filter.location && filter.location.city !== hotel.location.city) {
+          return false
+        }
 
-      if (filter.price && (hotel.price < filter.price?.min || hotel.price > filter.price?.max)) {
-        return false
-      }
+        if (filter.price && (hotel.price < filter.price.min || hotel.price > filter.price.max)) {
+          return false
+        }
 
-      if (filter.numberBedrooms && filter.numberBedrooms !== hotel.bedrooms) {
-        return false
-      }
+        if (filter.numberBedrooms && filter.numberBedrooms !== hotel.bedrooms) {
+          return false
+        }
 
-      if (filter.numberGuests && filter.numberGuests > hotel.guests) {
-        return false
-      }
+        if (filter.numberGuests && filter.numberGuests > hotel.guests) {
+          return false
+        }
 
-      return true
-    })
+        return true
+      })
   })
 
   const getHotelsCount = computed(() => {
@@ -68,7 +78,18 @@ export const useHotelsStore = defineStore('hotels', () => {
   })
 
   const getAvailablePrices = computed(() => {
-    const prices = getFilteredHotels.value.map((hotel) => hotel.price)
+    const filterStore = useFilterStore()
+
+    const filter = filterStore.filters
+    const guests = filter.numberGuests
+
+    const startDate = new Date(filter.date?.start)
+    const endDate = new Date(filter.date?.end)
+    const timeDiff = Math.abs(endDate.getTime() - startDate.getTime())
+    const nights = Math.ceil(timeDiff / (1000 * 3600 * 24))
+
+    const prices = getFilteredHotels.value.map((hotel) => hotel.price * guests * nights)
+
     return {
       min: Math.min(...prices),
       max: Math.max(...prices)

@@ -23,7 +23,7 @@
             <span class="ml-1 text-lg text-dark font-extrabold">{{
               getFormattedPrice(hotel.price)
             }}</span>
-            / noite
+            / {{ hotel.nights && hotel.nights > 1 ? $t('total') : $t('hotel_card.night') }}
           </p>
           <vue3-star-ratings v-model="hotel.score" starSize="16" />
         </div>
@@ -33,9 +33,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import type { PropType } from 'vue'
+import { defineProps, ref } from 'vue'
 
+import type { PropType } from 'vue'
 import type { Hotel } from '@/types/Hotels.types'
 
 import { getFormattedPrice } from '@/utils'

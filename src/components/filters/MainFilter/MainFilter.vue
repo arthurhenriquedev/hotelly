@@ -1,5 +1,5 @@
 <template>
-  <div class="filter__main flex flex-row items-center divide-x justify-between pr-8">
+  <div class="max-lg:hidden filter__main flex flex-row items-center divide-x justify-between pr-8">
     <div class="flex flex-row h-full">
       <button class="btn__gradient w-80 h-full px-8 text-white rounded-tr-3xl" id="all_categories">
         <font-awesome-icon icon="fa-solid fa-grip" class="mr-1" />
@@ -7,7 +7,7 @@
         <font-awesome-icon icon="fa-solid fa-angle-down" class="ml-1" />
       </button>
 
-      <div class="flex flex-row px-4" id="suggested_categories">
+      <div class="max-xl:hidden flex flex-row px-4" id="suggested_categories">
         <button
           class="btn__bordered h-full px-8 text-dark flex flex-row items-center justify-center"
           :class="{ selected: selectedCategory === category }"

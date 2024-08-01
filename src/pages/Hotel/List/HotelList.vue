@@ -26,7 +26,7 @@
         <div class="flex flex-row">
           <button class="px-6 py-3 text-dark border border-gray-200 bg-white rounded-md">
             <font-awesome-icon icon="fa-solid fa-filter" class="mr-2" />
-            Filtrar
+            {{ $t('filters.filter') }}
           </button>
         </div>
       </div>
@@ -53,7 +53,6 @@ import { useMonetaryUnitStore } from '@/stores/monetary'
 import { useFilterStore } from '@/stores/filters'
 import { useCategoryStore } from '@/stores/categories'
 
-import type { Hotel } from '@/types/Hotels.types'
 import type { Filter } from '@/types/Filters.types'
 
 import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard.vue'

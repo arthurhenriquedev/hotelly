@@ -5,6 +5,7 @@
     "experiences": "Experiências",
     "all_categories": "Todas as categorias",
     "detailed_filter_heading": "Encontre a experiência perfeita",
+    "total": "Total",
     "filters": {
       "location": "Localização",
       "date": {
@@ -17,11 +18,13 @@
         "min": "Preço mínimo",
         "max": "Preço máximo"
       },
-      "apply_filters": "Aplicar filtros"
+      "apply_filters": "Aplicar filtros",
+      "filter": "Filtrar"
     },
     "hotel_card": {
       "guests": "{count} hóspedes",
-      "bedrooms": "{count} quartos"
+      "bedrooms": "{count} quartos",
+      "night": "noite"
     },
     "list": {
       "no_experiences": "Nenhuma experiência encontrada",

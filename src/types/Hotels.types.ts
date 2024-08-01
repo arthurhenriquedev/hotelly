@@ -12,6 +12,7 @@ interface Hotel {
   category: Category
   bedrooms: number
   guests: number
+  nights: number
 }
 
 export type { Hotel }

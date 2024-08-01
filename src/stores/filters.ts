@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import type { Filter } from '@/types/Filter'
 
 export const useFilterStore = defineStore('filterStore', () => {
