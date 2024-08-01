@@ -64,7 +64,6 @@ const parseQueryParams = () => {
         start: filters.date?.start,
         end: tomorrowStartDate.toISOString().split('T')[0]
       }
-      console.log('enter', filters.date)
     }
   } else {
     const startDate = new Date()
@@ -81,7 +80,6 @@ const parseQueryParams = () => {
 }
 
 const updateQueryString = (filters: Filter) => {
-  console.log('filters', filters)
   const query: Record<string, any> = {}
 
   if (filters.name) query.name = filters.name

@@ -6,6 +6,14 @@
     "all_categories": "All categories",
     "detailed_filter_heading": "Find your perfect experience",
     "total": "Total",
+    "book": "Book",
+    "compare": {
+      "heading": "Compare options",
+      "description": "Compare the available options and choose the best for you",
+      "best_option": "Best option",
+      "button": "Compare",
+      "selected": "Selected"
+    },
     "filters": {
       "location": "Location",
       "date": {
@@ -24,7 +32,10 @@
     "hotel_card": {
       "guests": "{count} guests",
       "bedrooms": "{count} bedrooms",
-      "night": "night"
+      "night": "night",
+      "guests_quantity": "Guests quantity",
+      "bedrooms_quantity": "Bedrooms quantity",
+      "price_per_night": "Price per night"
     },
     "list": {
       "no_experiences": "No experiences found",

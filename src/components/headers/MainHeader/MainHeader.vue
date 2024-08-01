@@ -1,6 +1,6 @@
 <template>
-  <header class="header__main flex flex-row items-center justify-between px-8">
-    <div class="flex flex-row items-center">
+  <header class="header__main fixed w-screen flex flex-row items-center justify-between px-8">
+    <div class="flex flex-row items-center flex-grow pr-10">
       <div class="flex flex-row items-center mr-6">
         <div class="logo">
           <p class="text-2xl mr-2 font-semibold">hotelly</p>
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="search max-lg:hidden max-xl:flex flex-row items-center">
+      <div class="search max-lg:hidden max-w-96 flex-grow max-xl:flex flex-row items-center">
         <form>
           <div class="relative flex items-center justify-center">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -45,7 +45,7 @@
               v-model="searchQuery"
               type="search"
               id="default-search"
-              class="block w-96 px-4 py-3 ps-10 text-sm text-gray-900 outline-none border rounded-lg bg-light"
+              class="block w-full px-4 py-3 ps-10 text-sm text-gray-900 outline-none border rounded-lg bg-light"
               :placeholder="$t('search.placeholder', { count: hotelCount })"
               required
               @input="handleSearch"
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="user flex flex-row">
+      <div class="user max-md:hidden flex flex-row">
         <button
           class="flex items-center justify-center px-4 py-3 w-40 rounded-lg bg-dark text-light text-sm"
         >

@@ -6,6 +6,14 @@
     "all_categories": "Todas as categorias",
     "detailed_filter_heading": "Encontre a experiência perfeita",
     "total": "Total",
+    "book": "Reservar",
+    "compare": {
+      "heading": "Comparar opções",
+      "description": "Compare as opções disponíveis e escolha a melhor para você",
+      "best_option": "Melhor opção",
+      "button": "Comparar",
+      "selected": "Selecionado"
+    },
     "filters": {
       "location": "Localização",
       "date": {
@@ -24,7 +32,10 @@
     "hotel_card": {
       "guests": "{count} hóspedes",
       "bedrooms": "{count} quartos",
-      "night": "noite"
+      "night": "noite",
+      "guests_quantity": "Quantidade de hóspedes",
+      "bedrooms_quantity": "Quantidade de quartos",
+      "price_per_night": "Preço por noite"
     },
     "list": {
       "no_experiences": "Nenhuma experiência encontrada",

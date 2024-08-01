@@ -1,5 +1,7 @@
 <template>
-  <div class="max-lg:hidden filter__main flex flex-row items-center divide-x justify-between pr-8">
+  <div
+    class="max-lg:hidden fixed w-screen filter__main flex flex-row items-center divide-x justify-between pr-8"
+  >
     <div class="flex flex-row h-full">
       <button class="btn__gradient w-80 h-full px-8 text-white rounded-tr-3xl" id="all_categories">
         <font-awesome-icon icon="fa-solid fa-grip" class="mr-1" />

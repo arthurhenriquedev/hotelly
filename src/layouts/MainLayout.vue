@@ -1,7 +1,7 @@
 <template>
   <main-header />
   <main-filter />
-  <div class="p-8">
+  <div class="p-8 page-container">
     <RouterView />
   </div>
 </template>

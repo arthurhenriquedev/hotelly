@@ -127,7 +127,6 @@ onMounted(() => {
     () => hotelStore.getFilteredHotels,
     () => {
       setFilters(JSON.parse(JSON.stringify(filterStore.filters)))
-      console.log('formFilters', formFilters.value)
       setLocations(hotelStore.getAvailableLocations)
       setPrices(hotelStore.getAvailablePrices)
     },
@@ -187,8 +186,6 @@ const setFilters = (filters: Filter) => {
   //     priceRange.value[1] = filters.price.max
   //   }
   // }
-
-  console.log('setFilters', filters.price)
 }
 
 const setPrices = (newPrices: { min: number; max: number }) => {
@@ -201,7 +198,6 @@ const setPrices = (newPrices: { min: number; max: number }) => {
   const newPricesCopy = JSON.parse(JSON.stringify(newPrices))
   prices.value = [newPricesCopy.min, newPricesCopy.max]
   priceRange.value = [newPricesCopy.min, newPricesCopy.max]
-  console.log('prices', prices.value)
 }
 
 const setLocations = (locations: Location[]) => {

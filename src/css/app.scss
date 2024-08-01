@@ -6,6 +6,10 @@
 body {
   font-family: $primary-font;
   background-color: $background;
+
+  &:has(.modal-active) {
+    overflow: hidden;
+  }
 }
 
 .header {
@@ -31,11 +35,22 @@ body {
 
 .filter {
   &__main {
+    top: 5rem;
     background-color: #fff;
     height: 5rem;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
     z-index: 999;
   }
+}
+
+.modal {
+  &__main {
+    z-index: 9999;
+  }
+}
+
+.page-container {
+  padding-top: 12rem;
 }
 
 .btn {
@@ -102,5 +117,11 @@ select {
 
   &-light {
     color: $background;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page-container {
+    padding-top: 7rem;
   }
 }
