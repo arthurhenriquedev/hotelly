@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, type PropType } from 'vue'
+import { computed, ref } from 'vue'
 import { getFormattedPrice } from '@/utils'
 import type { Hotel } from '@/types/Hotels.types'
 
