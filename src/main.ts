@@ -1,24 +1,17 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createI18n } from 'vue-i18n'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import App from './App.vue'
 import router from './router'
-import Lang from '@/statics/lang/lang.js'
 import vue3StarRatings from 'vue3-star-ratings'
 import vLazy from './directives/v-lazy'
 import CircleFlags from 'vue-circle-flags'
 import VueSlider from 'vue-3-slider-component'
+import i18n from './plugins/i18n'
 
 import 'vue-circle-flags/dist/vue-circle-flags.css'
 import './plugins/fontawesome'
-
-const i18n = createI18n({
-  locale: 'pt',
-  fallbackLocale: 'pt',
-  messages: Lang
-})
 
 const app = createApp(App)
 

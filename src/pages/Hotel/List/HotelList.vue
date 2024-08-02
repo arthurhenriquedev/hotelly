@@ -69,7 +69,7 @@ import type { Hotel } from '@/types/Hotels.types'
 import { useHotelsStore } from '@/stores/hotels'
 import { useMonetaryUnitStore } from '@/stores/monetary'
 import { useFilterStore } from '@/stores/filters'
-import { parseQueryParams, updateQueryString } from '@/services/filters'
+import { parseQueryParams, updateQueryString } from '@/utils/filters'
 
 import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard.vue'
 import DetailedFilter from '@/components/filters/DetailedFilter/DetailedFilter.vue'

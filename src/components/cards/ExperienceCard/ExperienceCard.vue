@@ -19,7 +19,7 @@
 
         <div class="flex flex-row items-center justify-between">
           <p class="text-sm text-gray-400">
-            por
+            {{ $t('by') }}:
             <span class="ml-1 text-lg text-dark font-extrabold">{{
               getFormattedPrice(hotel.price)
             }}</span>
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, ref } from 'vue'
+import { computed, ref } from 'vue'
 
 import type { PropType } from 'vue'
 import type { Hotel } from '@/types/Hotels.types'
