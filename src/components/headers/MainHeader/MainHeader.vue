@@ -22,36 +22,39 @@
       </div>
 
       <div class="search max-lg:hidden max-w-96 flex-grow max-xl:flex flex-row items-center">
-        <form>
-          <div class="relative flex items-center justify-center">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                class="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
-            <input
-              v-model="searchQuery"
-              type="search"
-              id="default-search"
-              class="block w-full px-4 py-3 ps-10 text-sm text-gray-900 outline-none border rounded-lg bg-light"
-              :placeholder="$t('search.placeholder', { count: hotelCount })"
-              required
-              @input="handleSearch"
-            />
+        <div class="relative flex items-center justify-center gap-2">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg
+              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
           </div>
-        </form>
+          <input
+            v-model="searchQuery"
+            type="search"
+            id="default-search"
+            class="block w-full px-4 py-3 ps-10 text-sm text-gray-900 outline-none border rounded-lg bg-light"
+            :placeholder="$t('search.placeholder', { count: hotelCount })"
+            required
+          />
+          <button
+            class="flex items-center justify-center px-4 py-4 h-full rounded-lg bg-primary border text-light text-sm"
+            @click="handleSearch"
+          >
+            <font-awesome-icon :icon="['fas', 'search']" />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -99,7 +102,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { markRaw, onMounted, ref, watch } from 'vue'
 
 import { useHotelsStore } from '@/stores/hotels'
 import { useMonetaryUnitStore } from '@/stores/monetary'
@@ -114,7 +117,7 @@ const monetaryUnit = ref(monetaryStore.currentUnit)
 const hotelCount = hotels.getHotelsCount
 
 const handleSearch = () => {
-  filterStore.setFilter('name', searchQuery)
+  filterStore.setFilter('name', searchQuery.value)
 }
 
 onMounted(() => {

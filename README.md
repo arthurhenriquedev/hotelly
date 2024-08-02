@@ -99,9 +99,8 @@ ESLint é configurado para aplicar regras de linting ao código, garantindo a co
 ## Melhorias futuras (Roadmap)
 
 ```plaintext
-+ Adicionar filtro de preço e avaliação;
 + Adicionar autenticação;
-+ Adicionar botão de pesquisa, invés do modo reativo com @input;
-+ Adicionar Infinite Loading para otimização;
-+ Adicionar tela de detalhes de experiência.
++ Adicionar paginação na lista;
++ Adicionar tela de detalhes de experiência;
++ Adicionar menu no mobile.
 ```
