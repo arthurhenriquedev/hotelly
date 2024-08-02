@@ -27,9 +27,15 @@
       "price": {
         "title": "Price",
         "min": "Minimum price",
-        "max": "Maximum price"
+        "max": "Maximum price",
+        "sort_max": "Higher price",
+        "sort_min": "Lower price"
       },
-      "score": "Rating",
+      "score": {
+        "title": "Rating",
+        "sort_max": "Best rating",
+        "sort_min": "Worst rating"
+      },
       "apply_filters": "Apply filters",
       "filter": "Filter"
     },

@@ -105,7 +105,7 @@ const compareHotels = ref<Hotel[]>([])
 const { t } = useI18n()
 
 const sortBy = ref<string | undefined>(undefined)
-const sortOptions = ref([
+const sortOptions = computed(() => [
   { label: t('filters.relevant'), value: undefined },
   { label: t('filters.price.sort_max'), value: 'price_max' },
   { label: t('filters.price.sort_min'), value: 'price_min' },
