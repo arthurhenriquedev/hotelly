@@ -2,7 +2,7 @@ import 'intersection-observer'
 import { createPinia, setActivePinia } from 'pinia'
 import { config } from '@vue/test-utils'
 
-import i18n from '@/plugins/i18n'
+import { i18n } from '@/plugins/i18n'
 import Vue3StarRatings from 'vue3-star-ratings'
 import vLazy from '@/directives/v-lazy'
 

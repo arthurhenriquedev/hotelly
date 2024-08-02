@@ -10,6 +10,7 @@ export const useFilterStore = defineStore('filterStore', () => {
     numberBedrooms: undefined,
     category: undefined,
     location: undefined,
+    sortBy: undefined,
     date: undefined
   })
 
@@ -38,6 +39,7 @@ export const useFilterStore = defineStore('filterStore', () => {
       numberBedrooms: undefined,
       category: undefined,
       location: undefined,
+      sortBy: undefined,
       date: undefined
     }
   }

@@ -16,16 +16,25 @@
       "selected": "Selecionado"
     },
     "filters": {
+      "sortBy": "Ordenar por",
       "location": "Localização",
       "date": {
         "start": "Data de check-in",
         "end": "Data de check-out"
       },
       "number_of_guests": "Número de hóspedes",
+      "relevant": "Mais relevantes",
       "price": {
         "title": "Preço",
         "min": "Preço mínimo",
-        "max": "Preço máximo"
+        "max": "Preço máximo",
+        "sort_max": "Maior preço",
+        "sort_min": "Menor preço"
+      },
+      "score": {
+        "title": "Avaliação",
+        "sort_max": "Melhor avaliação",
+        "sort_min": "Pior avaliação"
       },
       "apply_filters": "Aplicar filtros",
       "filter": "Filtrar"

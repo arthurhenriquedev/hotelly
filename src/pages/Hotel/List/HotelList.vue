@@ -24,10 +24,21 @@
           </p>
         </div>
         <div class="flex flex-row">
-          <button class="px-6 py-3 text-dark border border-gray-200 bg-white rounded-md">
-            <font-awesome-icon icon="fa-solid fa-filter" class="mr-2" />
-            {{ $t('filters.filter') }}
-          </button>
+          <div class="flex flex-col">
+            <label for="location" class="text-sm text-gray-500 mb-1">{{
+              $t('filters.sortBy')
+            }}</label>
+            <select
+              id="location"
+              v-model="sortBy"
+              class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-lg bg-light"
+              @change="() => filterStore.setFilter('sortBy', sortBy)"
+            >
+              <option v-for="(sortOption, i) in sortOptions" :key="i" :value="sortOption.value">
+                {{ sortOption.label }}
+              </option>
+            </select>
+          </div>
         </div>
       </div>
       <div
@@ -63,6 +74,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, computed, markRaw } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
 import type { Hotel } from '@/types/Hotels.types'
 
@@ -90,6 +102,17 @@ const hotelsCount = computed(() => hotelStore.getHotelsCount)
 
 const compareHotels = ref<Hotel[]>([])
 
+const { t } = useI18n()
+
+const sortBy = ref<string | undefined>(undefined)
+const sortOptions = ref([
+  { label: t('filters.relevant'), value: undefined },
+  { label: t('filters.price.sort_max'), value: 'price_max' },
+  { label: t('filters.price.sort_min'), value: 'price_min' },
+  { label: t('filters.score.sort_max'), value: 'score_max' },
+  { label: t('filters.score.sort_min'), value: 'score_min' }
+])
+
 const modal = ref({
   opened: false,
   title: '',
@@ -99,6 +122,9 @@ const modal = ref({
 
 onMounted(() => {
   router.push({ query: parseQueryParams() })
+  sortBy.value =
+    sortOptions.value.find((option) => option.value === filterStore.filters.sortBy)?.value ||
+    undefined
 
   watch(
     () => filterStore.filters,

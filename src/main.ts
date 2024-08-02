@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { MaskInput } from 'vue-3-mask'
 
 import App from './App.vue'
 import router from './router'
@@ -20,9 +22,10 @@ app.use(router)
 app.use(i18n)
 app.use(CircleFlags)
 
+app.component('mask-input', MaskInput)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('vue3-star-ratings', vue3StarRatings)
-app.component('VueSlider', VueSlider)
+app.component('vue-slider', VueSlider)
 
 app.directive('lazy', vLazy)
 

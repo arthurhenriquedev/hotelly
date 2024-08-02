@@ -4,7 +4,9 @@ import Lang from '@/statics/lang/lang.js'
 const i18n = createI18n({
   locale: 'pt',
   fallbackLocale: 'pt',
-  messages: Lang
+  messages: Lang,
+  legacy: false,
+  allowComposition: true
 })
 
 export default i18n

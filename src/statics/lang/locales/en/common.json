@@ -16,17 +16,20 @@
       "selected": "Selected"
     },
     "filters": {
+      "sortBy": "Sort by",
       "location": "Location",
       "date": {
         "start": "Check-in date",
         "end": "Check-out date"
       },
       "number_of_guests": "Number of guests",
+      "relevant": "Most relevant",
       "price": {
         "title": "Price",
         "min": "Minimum price",
         "max": "Maximum price"
       },
+      "score": "Rating",
       "apply_filters": "Apply filters",
       "filter": "Filter"
     },

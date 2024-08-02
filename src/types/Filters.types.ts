@@ -13,6 +13,7 @@ interface Filter {
   numberBedrooms?: number
   category?: Category
   location?: Location
+  sortBy?: string
   date?: {
     start?: string
     end?: string

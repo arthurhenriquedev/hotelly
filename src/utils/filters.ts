@@ -17,7 +17,8 @@ const parseQueryParams = () => {
     name: query.name ? (query.name as string) : undefined,
     price: query.price ? JSON.parse(query.price as string) : undefined,
     numberGuests: query.numberGuests ? Number(query.numberGuests) : 1,
-    numberBedrooms: query.numberBedrooms ? Number(query.numberBedrooms) : undefined
+    numberBedrooms: query.numberBedrooms ? Number(query.numberBedrooms) : undefined,
+    sortBy: query.sortBy ? (query.sortBy as string) : undefined
   }
 
   if (query.category) {
@@ -92,6 +93,7 @@ const updateQueryString = (filters: Filter) => {
   if (filters.numberBedrooms) query.numberBedrooms = filters.numberBedrooms
   if (filters.category) query.category = filters.category?.slug
   if (filters.location) query.location = JSON.stringify(filters.location)
+  if (filters.sortBy) query.sortBy = filters.sortBy
   if (filters.date) query.date = JSON.stringify(filters.date)
 
   return query

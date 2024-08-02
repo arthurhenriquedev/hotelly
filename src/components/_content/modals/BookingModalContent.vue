@@ -9,16 +9,21 @@
             v-model="form.name"
             class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
             type="text"
+            placeholder="João da Silva"
             id="name"
             required
           />
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700" for="contact">Contato</label>
-          <input
+          <label class="block text-sm font-medium text-gray-700" for="contact"
+            >Telefone (Celular)</label
+          >
+          <mask-input
             v-model="form.contact"
             class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
+            mask="(##) #####-####"
+            placeholder="(00) 00000-0000"
             type="text"
             id="contact"
             required
@@ -29,10 +34,12 @@
           <label class="block text-sm font-medium text-gray-700" for="cardNumber"
             >Número do Cartão</label
           >
-          <input
+          <mask-input
             v-model="form.cardNumber"
             class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
             type="text"
+            mask="#### #### #### ####"
+            placeholder="0000 0000 0000 0000"
             id="cardNumber"
             required
           />
@@ -46,6 +53,7 @@
             v-model="form.cardName"
             class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
             type="text"
+            placeholder="JOAO DA SILVA"
             id="cardName"
             required
           />
@@ -56,9 +64,10 @@
             <label class="block text-sm font-medium text-gray-700" for="expiryDate"
               >Data de Expiração</label
             >
-            <input
+            <mask-input
               v-model="form.expiryDate"
               class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
+              mask="##/##"
               type="text"
               id="expiryDate"
               placeholder="MM/AA"
@@ -67,9 +76,11 @@
           </div>
           <div class="flex-1">
             <label class="block text-sm font-medium text-gray-700" for="cvv">CVV</label>
-            <input
+            <mask-input
               v-model="form.cvv"
               class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light w-full"
+              mask="###"
+              placeholder="000"
               type="text"
               id="cvv"
               required
@@ -93,6 +104,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+import NotificationService from '@/services/NotificationService'
+
 const form = ref({
   name: '',
   contact: '',
@@ -103,6 +116,14 @@ const form = ref({
 })
 
 const submitForm = () => {
+  const formattedForm = form.value
   console.log('Formulário enviado', form.value)
+
+  NotificationService.sendNotification(
+    `${formattedForm.name}, sua reserva foi emitida com sucesso!`,
+    {
+      body: 'Após a confirmação do pagamento, você receberá um e-mail com os detalhes da reserva.'
+    }
+  )
 }
 </script>

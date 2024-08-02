@@ -61,28 +61,6 @@
         />
       </div>
 
-      <!-- <div class="flex flex-col w-full">
-        <label for="price-range" class="text-sm text-gray-500 mb-1">{{
-          $t('filters.price.title')
-        }}</label>
-        <div class="px-2">
-          <vue-slider
-            v-model="priceRange"
-            :min="prices[0]"
-            :max="prices[1]"
-            :interval="0.1"
-            :lazy="true"
-            class="mt-2"
-          ></vue-slider>
-          {{ priceRange }}
-          {{ prices[0] }}
-        </div>
-        <div class="flex justify-between w-full text-sm text-dark">
-          <span>{{ getFormattedPrice(prices[0]) }}</span>
-          <span>{{ getFormattedPrice(prices[1]) }}</span>
-        </div>
-      </div> -->
-
       <div class="flex flex-col h-full justify-end">
         <button
           class="btn__gradient w-full h-12 outline-none border border-gray-300 text-white rounded-lg"
@@ -131,13 +109,6 @@ onMounted(() => {
     { immediate: true }
   )
 
-  // watch(
-  //   () => priceRange.value,
-  //   () => {
-  //     formFilters.value.price = { min: priceRange.value[0], max: priceRange.value[1] }
-  //   }
-  // )
-
   setPrices(hotelStore.getAvailablePrices)
 
   if (!formFilters?.value?.date?.start || !formFilters?.value?.date?.end) {
@@ -174,16 +145,6 @@ const setFilters = (filters: Filter) => {
   if (filters.numberGuests) {
     formFilters.value.numberGuests = filters.numberGuests
   }
-
-  // if (filters.price?.min && filters.price?.max) {
-  //   if (filters.price.min >= prices.value[0]) {
-  //     priceRange.value[0] = filters.price.min
-  //   }
-
-  //   if (filters.price.max <= prices.value[1]) {
-  //     priceRange.value[1] = filters.price.max
-  //   }
-  // }
 }
 
 const setPrices = (newPrices: { min: number; max: number }) => {
