@@ -25,7 +25,7 @@
             }}</span>
             / {{ hotel.nights && hotel.nights > 1 ? $t('total') : $t('hotel_card.night') }}
           </p>
-          <vue3-star-ratings v-model="hotel.score" disableClick starSize="16" />
+          <vue3-star-ratings v-model="hotelScore" disableClick starSize="16" />
         </div>
 
         <div class="flex flex-row justify-between items-center gap-4">
@@ -71,6 +71,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const hotelScore = ref<number>(props.hotel.score)
 
 const openModal = (type: string) => {
   if (type === 'compare') {

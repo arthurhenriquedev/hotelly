@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import type { Filter } from '@/types/Filter'
 
 export const useFilterStore = defineStore('filterStore', () => {
@@ -19,8 +19,9 @@ export const useFilterStore = defineStore('filterStore', () => {
 
   function setFilter(key: keyof Filter, value: any) {
     if (value === undefined || value === null) {
-      const { [key]: _, ...rest } = filters.value
-      filters.value = rest as Filter
+      const updatedFilters = { ...filters.value }
+      delete updatedFilters[key]
+      filters.value = updatedFilters as Filter
     } else {
       filters.value = {
         ...filters.value,

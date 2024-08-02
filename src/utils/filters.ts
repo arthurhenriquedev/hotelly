@@ -47,7 +47,7 @@ const parseQueryParams = () => {
     const endDate = new Date(formattedDate.end)
     const isStartDateValid = !isNaN(Date.parse(formattedDate.start as string))
     const isEndDateValid = !isNaN(Date.parse(formattedDate.end as string))
-    let tomorrowStartDate = new Date(formattedDate.start)
+    const tomorrowStartDate = new Date(formattedDate.start)
     tomorrowStartDate.setDate(tomorrowStartDate.getDate() + 1)
 
     filters.date = {

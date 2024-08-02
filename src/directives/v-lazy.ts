@@ -3,7 +3,7 @@ import type { Directive, DirectiveBinding } from 'vue'
 const vLazy: Directive = {
   beforeMount(el: HTMLImageElement, binding: DirectiveBinding) {
     const loadImage = () => {
-      let src = binding.value
+      const src = binding.value
 
       if (typeof src === 'string' && src.startsWith('@/')) {
         const modules = import.meta.glob('/src/assets/icons/**')

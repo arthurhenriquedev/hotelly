@@ -104,8 +104,6 @@ import { useFilterStore } from '@/stores/filters'
 import type { Filter } from '@/types/Filters.types'
 import type { Location } from '@/types/Location.types'
 
-import { getFormattedPrice } from '@/utils'
-
 const hotelStore = useHotelsStore()
 const filterStore = useFilterStore()
 
