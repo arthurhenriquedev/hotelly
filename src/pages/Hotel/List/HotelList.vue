@@ -93,7 +93,7 @@ const compareHotels = ref<Hotel[]>([])
 const modal = ref({
   opened: false,
   title: '',
-  content: markRaw(BookingModalContent),
+  content: null as any,
   data: {}
 })
 
@@ -116,15 +116,15 @@ watch(
   }
 )
 
-const openModal = (hotel: object | Array<object>, type: string) => {
+const openModal = (hotel: Hotel[] | Hotel, type: string) => {
   modal.value.opened = true
 
   if (type === 'compare') {
     modal.value.title = ``
     modal.value.content = markRaw(CompareModalContent)
-    modal.value.data = { hotels: hotel }
+    modal.value.data = { hotels: hotel as Hotel[] }
   } else {
-    const hotelObj = hotel?.hotel as Hotel
+    const hotelObj = hotel as Hotel
     modal.value.title = hotelObj.name
     modal.value.content = markRaw(BookingModalContent)
     modal.value.data = { hotel: hotelObj }

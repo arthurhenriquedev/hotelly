@@ -36,7 +36,7 @@
       "night": "night",
       "guests_quantity": "Guests quantity",
       "bedrooms_quantity": "Bedrooms quantity",
-      "price_per_night": "Price per night"
+      "price_per_night": "Price"
     },
     "list": {
       "no_experiences": "No experiences found",

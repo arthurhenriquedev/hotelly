@@ -31,9 +31,13 @@ const parseQueryParams = () => {
   }
 
   if (query.location) {
+    const location = JSON.parse(query.location as string)
+    const city = JSON.parse(location as string).city
+    const country = JSON.parse(location as string).country
+
     filters.location = {
-      city: query.location.city as string,
-      country: query.location.country as string
+      city: city as string,
+      country: country as string
     }
 
     if (!filters.location.city || !filters.location.country) {

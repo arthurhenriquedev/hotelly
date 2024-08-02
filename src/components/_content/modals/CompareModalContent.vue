@@ -14,7 +14,10 @@
             v-for="hotel in compareData"
             :key="hotel.name"
           >
-            <div v-if="bestOption.id === hotel.id" class="bg-green-100 mb-4 rounded-lg py-2 px-4">
+            <div
+              v-if="bestOption && bestOption.id === hotel.id"
+              class="bg-green-100 mb-4 rounded-lg py-2 px-4"
+            >
               <p class="text-sm text-green-500 font-regular">{{ $t('compare.best_option') }}</p>
             </div>
 
@@ -44,15 +47,17 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, type PropType } from 'vue'
 import { getFormattedPrice } from '@/utils'
+import type { Hotel } from '@/types/Hotels.types'
 
-const props = defineProps({
-  data: {
-    type: [Object, Array],
-    required: true
-  }
-})
+interface DataProps {
+  hotels: Hotel[]
+}
+
+const props = defineProps<{
+  data: DataProps
+}>()
 
 const compareData = ref(props.data?.hotels || [])
 

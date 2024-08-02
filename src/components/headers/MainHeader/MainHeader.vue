@@ -126,7 +126,7 @@ onMounted(() => {
 watch(
   () => filterStore.filters,
   () => {
-    searchQuery.value = filterStore.filters.name
+    searchQuery.value = filterStore.filters.name ?? ''
   }
 )
 </script>

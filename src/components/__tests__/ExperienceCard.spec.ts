@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import HotelCard from './ExperienceCard.vue'
+import ExperienceCard from '@/components/cards/ExperienceCard/ExperienceCard.vue'
 import type { Hotel } from '@/types/Hotels.types'
 
 const hotel: Hotel = {
@@ -19,7 +19,7 @@ const hotel: Hotel = {
 const compareHotels: Hotel[] = [hotel, hotel]
 
 describe('ExperienceCard.vue', () => {
-  const wrapper = mount(HotelCard, {
+  const wrapper = mount(ExperienceCard, {
     props: {
       hotel,
       compareHotels

@@ -47,15 +47,17 @@ export const useHotelsStore = defineStore('hotels', () => {
           return false
         }
 
-        if (filter.price && (hotel.price < filter.price.min || hotel.price > filter.price.max)) {
-          return false
+        if (filter.price && filter.price.min !== undefined && filter.price.max !== undefined) {
+          if (hotel.price < filter.price.min || hotel.price > filter.price.max) {
+            return false
+          }
         }
 
         if (filter.numberBedrooms && filter.numberBedrooms !== hotel.bedrooms) {
           return false
         }
 
-        if (filter.numberGuests && filter.numberGuests > hotel.guests) {
+        if (filter.numberGuests !== undefined && filter.numberGuests > (hotel?.guests || 1)) {
           return false
         }
 
@@ -81,10 +83,15 @@ export const useHotelsStore = defineStore('hotels', () => {
     const filterStore = useFilterStore()
 
     const filter = filterStore.filters
-    const guests = filter.numberGuests
+    const guests = filter.numberGuests ?? 1
 
-    const startDate = new Date(filter.date?.start)
-    const endDate = new Date(filter.date?.end)
+    const startDate = new Date(filter.date?.start ?? '')
+    const endDate = new Date(filter.date?.end ?? '')
+
+    if (!startDate || !endDate) {
+      return { min: 0, max: 0 }
+    }
+
     const timeDiff = Math.abs(endDate.getTime() - startDate.getTime())
     const nights = Math.ceil(timeDiff / (1000 * 3600 * 24))
 

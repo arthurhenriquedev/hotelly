@@ -4,4 +4,4 @@ interface SuggestedCategory {
   icon: string
 }
 
-export { SuggestedCategory }
+export type { SuggestedCategory }

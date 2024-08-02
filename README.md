@@ -90,7 +90,7 @@ Pinia é usado para gerenciamento de estado centralizado. Os módulos de estado 
 
 ### Testes
 
-Os testes unitários são escritos usando Vitest, um framework de testes focado em velocidade e simplicidade. Os testes são localizados junto da pasta do componente que desejar (Pode ser alterado para `src/components/__tests` como outra abordagem de organização, entre outras).
+Os testes unitários são escritos usando Vitest, um framework de testes focado em velocidade e simplicidade. Os testes estão localizados em `src/components/__tests__`.
 
 ### Linting
 

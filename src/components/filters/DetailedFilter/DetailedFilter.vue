@@ -24,7 +24,7 @@
         </select>
       </div>
 
-      <div class="flex flex-col">
+      <div v-if="formFilters.date" class="flex flex-col">
         <label for="start-date" class="text-sm text-gray-500 mb-1">{{
           $t('filters.date.start')
         }}</label>
@@ -35,7 +35,7 @@
           class="block px-4 py-3 text-sm text-gray-900 outline-none border rounded-tl-lg rounded-bl-lg bg-light"
         />
       </div>
-      <div class="flex flex-col">
+      <div v-if="formFilters.date" class="flex flex-col">
         <label for="end-date" class="text-sm text-gray-500 mb-1">{{
           $t('filters.date.end')
         }}</label>
