@@ -1,6 +1,6 @@
 # Hotelly
 
-Projeto de teste para visualização, comparação e escolha eficiente de hotéis utilizando Vue 3 + Vite + TailwindCSS + Sass
+Caso de Estudo para visualização, comparação e escolha eficiente de hotéis utilizando Vue 3 + Vite + TailwindCSS + Sass.
 
 ## IDE Recomendada
 
@@ -64,6 +64,8 @@ O projeto segue uma estrutura modular para facilitar a escalabilidade e manuten�
 src/
 ├── assets/          # Arquivos estáticos (imagens, estilos, etc.)
 ├── components/      # Componentes Vue reutilizáveis
+    ├── *(categoria-do-componente)/      # Separados por categoria
+        ├── *(nome-do-componente)/       # Arquivos relacionados ao componente
 ├── css/             # Arquivos de estilo (CSS/SASS)
 ├── directives/      # Diretivas personalizadas Vue
 ├── layouts/         # Arquivos de layout para renderização de páginas
@@ -93,3 +95,13 @@ Os testes unitários são escritos usando Vitest, um framework de testes focado 
 ### Linting
 
 ESLint é configurado para aplicar regras de linting ao código, garantindo a conformidade com as melhores práticas de desenvolvimento. As regras podem ser personalizadas no arquivo `.eslintrc.js`.
+
+## Melhorias futuras (Roadmap)
+
+```plaintext
++ Adicionar filtro de preço e avaliação;
++ Adicionar autenticação;
++ Adicionar botão de pesquisa, invés do modo reativo com @input;
++ Adicionar Infinite Loading para otimização;
++ Adicionar tela de detalhes de experiência.
+```
